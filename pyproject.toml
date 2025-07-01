@@ -1,0 +1,15 @@
+[project]
+name = "llm-study"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "accelerate==0.29.3",
+    "autotrain-advanced==0.7.77",
+    "bitsandbytes==0.43.1",
+    "datasets==2.19.0",
+    "huggingface-hub==0.22.2",
+    "tiktoken==0.6.0",
+    "transformers==4.40.1",
+]
