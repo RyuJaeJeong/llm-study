@@ -81,18 +81,18 @@ CREATE TABLE players (
 ### SQL:
 """
 
-df = load_dataset("shangrilar/ko_text2sql", "origin")['test']
-df = df.to_pandas()
-for idx, row in df.iterrows():
-    prompt = make_prompt(row['context'], row['question'])
-    df.loc[idx, 'prompt'] = prompt
-# sql 생성
-gen_sqls = hf_pipe(df['prompt'].tolist(), do_sample=False, return_full_text=False, max_length=512, truncation=True)
-gen_sqls = [x[0]['generated_text'] for x in gen_sqls]
-df['gen_sql'] = gen_sqls
+# df = load_dataset("shangrilar/ko_text2sql", "origin")['test']
+# df = df.to_pandas()
+# for idx, row in df.iterrows():
+#     prompt = make_prompt(row['context'], row['question'])
+#     df.loc[idx, 'prompt'] = prompt
+# # sql 생성
+# gen_sqls = hf_pipe(df['prompt'].tolist(), do_sample=False, return_full_text=False, max_length=512, truncation=True)
+# gen_sqls = [x[0]['generated_text'] for x in gen_sqls]
+# df['gen_sql'] = gen_sqls
+#
+# # 평가를 위한 requests.jsonl 생성
+# eval_filepath = "text2sql_evaluation.jsonl"
+# make_requests_for_gpt_evaluation(df, eval_filepath)
 
-# 평가를 위한 requests.jsonl 생성
-eval_filepath = "text2sql_evaluation.jsonl"
-make_requests_for_gpt_evaluation(df, eval_filepath)
-
-# print(hf_pipe(example, do_sample=False, return_full_text=False, max_length=512, truncation=True))
+print(hf_pipe(example, do_sample=False, return_full_text=False, max_length=512, truncation=True))

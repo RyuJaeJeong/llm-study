@@ -11,7 +11,7 @@ dependencies = [
     "datasets==2.19.0",
     "dotenv>=0.9.9",
     "huggingface-hub==0.22.2",
-    "numpy>=2.2.6",
+    "numpy==1.26.4",
     "tiktoken==0.6.0",
     "transformers>=4.40.1",
     "triton==2.0.0",
