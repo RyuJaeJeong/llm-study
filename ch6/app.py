@@ -60,7 +60,7 @@ def make_inference_pipeline(model_id):
     pipe = pipeline("text-generation", model=model, tokenizer=tokenizer)
     return pipe
 
-model_id = 'beomi/Yi-Ko-6B'
+model_id = 'financeRyu/yi-ko-6b-text2sql'
 hf_pipe = make_inference_pipeline(model_id)
 
 example = """당신은 SQL을 생성하는 SQL 봇입니다. DDL의 테이블을 활용한 Question을 해결할 수 있는 SQL 쿼리를 생성하세요.
